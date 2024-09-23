@@ -38,6 +38,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+//유저를 만들기
 // API에서 게시글 데이터를 가져오는 함수
 function fetchPosts() {
     return __awaiter(this, void 0, void 0, function () {
@@ -69,9 +70,12 @@ function renderPosts(/* (라)   */ posts) {
         postElement.className = "post";
         var titleElement = document.createElement("h2");
         titleElement.textContent = post.title;
+        var userIdElement = document.createElement("p");
+        userIdElement.textContent = "User ID: ".concat(post.userId);
         var bodyElement = document.createElement("p");
         bodyElement.textContent = post.body;
         postElement.appendChild(titleElement);
+        postElement.appendChild(userIdElement);
         postElement.appendChild(bodyElement);
         postsContainer.appendChild(postElement);
     });

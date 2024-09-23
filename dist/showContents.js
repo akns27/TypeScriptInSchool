@@ -12,6 +12,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+//유저를 만들기
 // API에서 게시글 데이터를 가져오는 함수
 function fetchPosts() {
     return __awaiter(this, void 0, void 0, function* () {
@@ -29,14 +30,17 @@ function renderPosts(/* (라)   */ posts) {
     if (!postsContainer)
         return;
     postsContainer.innerHTML = ""; // 이전 내용을 지우기
-    posts.forEach(post => {
+    posts.forEach((post) => {
         const postElement = document.createElement("div");
         postElement.className = "post";
         const titleElement = document.createElement("h2");
         titleElement.textContent = post.title;
+        const userIdElement = document.createElement("p");
+        userIdElement.textContent = `User ID: ${post.userId}`;
         const bodyElement = document.createElement("p");
         bodyElement.textContent = post.body;
         postElement.appendChild(titleElement);
+        postElement.appendChild(userIdElement);
         postElement.appendChild(bodyElement);
         postsContainer.appendChild(postElement);
     });
