@@ -12,10 +12,14 @@
 //   name: '김개발',
 //   skills: ['javascript', 'react']
 // };
-// type People = Person[]; 
+// type People = Person[];
 // const people: People = [person, expert];
 // people.forEach((p)=>console.log(p.name));
-function getOrderId(step) {
-    return step.orderId;
+function move(animal) {
+    var _a;
+    if ('swim' in animal) {
+        (_a = animal.swim) === null || _a === void 0 ? void 0 : _a.call(animal); //undefined가 안뜨고 swim일 때만 뜨게한다
+    }
 }
-let a;
+let f = { swim: () => console.log('swimming') };
+move(f);
